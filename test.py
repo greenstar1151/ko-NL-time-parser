@@ -17,14 +17,29 @@ testcase = [
         'time_base': datetime.now()
     },
     {
-        'text': '5일 후',
+        'text': '2시간 후',
         'time_base': datetime.now()
     },
     {
         'text': '30초 후',
         'time_base': datetime.now()
-    }
-    
+    },
+    {
+        'text': '1일 2시간 34분 56초 후',
+        'time_base': datetime.now()
+    },
+    {
+        'text': '한달 뒤',
+        'time_base': datetime.now()
+    },
+    {
+        'text': '일주일 뒤',
+        'time_base': datetime.now()
+    },
+    {
+        'text': '한달 일주일 뒤 자정 1시간 30분 전',
+        'time_base': datetime.now()
+    },
 ]
 
 
@@ -34,5 +49,5 @@ for i, case in enumerate(testcase):
     print(f'### case {i+1} ###')
     print(f'기준 시각: \t{time_base}')
     print(f'[In] \t\t{text}')
-    print(f'[Out] \t\t{parse_time(text, time_base)}')
+    print(f'[Out] \t\t{parse_time(text, time_base)[0]}')
     print()
