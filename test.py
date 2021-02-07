@@ -49,5 +49,5 @@ for i, case in enumerate(testcase):
     print(f'### case {i+1} ###')
     print(f'기준 시각: \t{time_base}')
     print(f'[In] \t\t{text}')
-    print(f'[Out] \t\t{parse_time(text, time_base)[0]}')
+    print(f'[Out] \t\t{parse_time(text, time_base)}')
     print()

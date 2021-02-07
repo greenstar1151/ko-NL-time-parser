@@ -65,7 +65,7 @@ def to_time(token: str) -> list:
     return parsed
 
 
-def parse_time(text, time_base = datetime.now()):
+def parse_time(text, time_base = datetime.now(), verbose=False):
     '''Parse korean NL time expression to datetime'''
     words = text.split(' ') # Basic tokenizing(whitespace)
     words = filter(lambda x: len(x) > 0, words)
@@ -140,7 +140,9 @@ def parse_time(text, time_base = datetime.now()):
     for tDelta in optimized:
         time_base = tDelta.expression(time_base)
 
-    return time_base, translated, optimized
+
+    if verbose: return time_base, translated, optimized
+    else: return time_base
 
 
 
@@ -153,4 +155,4 @@ if __name__ == '__main__':
     print(f'현재 시각: {time_base}')
     print(f'[In] {text}')
 
-    print(f'[Out] {parse_time(text, time_base)[0]}')
+    print(f'[Out] {parse_time(text, time_base, verbose=True)}')
