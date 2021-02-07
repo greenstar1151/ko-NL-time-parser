@@ -8,7 +8,7 @@ try:
 except ImportError:
     from dataset import dataset
 
-debug = True
+debug = False
 
 class timeObject():
     def __init__(self, expression, meta, time_stack, name = '') -> None:
@@ -43,7 +43,7 @@ def to_time(token: str) -> list:
             except ValueError:
                 pass
         else:
-            string += c
+            string = str(string) + c
         last_type = c.isdecimal()
     else:
         parsed.append(string)
